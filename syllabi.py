@@ -1,78 +1,48 @@
+from syllabi_text import CS1026_DESC, CS1027_DESC, CS1032_DESC, CS1033_DESC, CS2033_DESC, CS2034_DESC, CS2035_DESC, CS2120_DESC, CS2208_DESC, CS2209_DESC, CS2210_DESC, CS2211_DESC, CS2212_DESC, CS2214_DESC, CS3305_DESC, CS3307_DESC, CS3319_DESC, CS3331_DESC, CS3340_DESC, CS3342_DESC, CS3346_DESC, CS3350_DESC, CS3357_DESC, CS3377_DESC, CS3388_DESC, CS4411_DESC, CS4414_DESC, CS4417_DESC, CS4438_DESC, CS4442_DESC, CS4457_DESC, CS4463_DESC, CS4470_DESC
+
+# format is (syllabus desc, prereqs, antireqs)
+
 syllabi = {
-    'CS 1026': '''CS 1026 provides an introduction to the basic concepts of computer programming and program design.
-It is intended for students who have interest in learning basic programming skills including those who
-intend to study Computer Science. This course assumes no previous programming background,
-although having some experience with programming is an asset.
-Programming skills will be developed using the Python programming language. Course topics include:
-data types, variables, expressions, program constructs, strings (text), functions, basic data structures
-(lists, tuples, sets dictionaries), objects, object‐oriented design, classes, modularity, and problem‐solving
-techniques. Programming examples and assignments are taken from a variety of disciplines.
-Lecture Topics: 
-Introduction to Computers and Python
-,Variable Types
-,Input/Output
-,Conditionals
-,Loops
-,Functions
-,Lists, Tuples, Sets, and Dictionaries
-,Exception Handling
-,Object-Oriented Programming and Inheritance
-    ''',
-    'CS 1027': 'A continuation for both Computer Science 1025A/B and Computer Science 1026A/B. We will study data organization and manipulation, object-oriented principles, abstract data types and their implementations in Java, lists, stacks, queues, trees, recursion, file and memory organization. Course Learning Outcomes,Program in an object-oriented language, namely Java,Create classes and use inheritance for creating sub-classes,Identify and implement arrays and linked data structures,Implement and use abstract data types, i.e. stacks, queues, lists, and trees,Debug code and use exceptions to handle bugs gracefully,Identify the different parts of memory during the execution of a Java program,Program algorithms from pseudo-code Lecture Topics,Object-Oriented Programming Principles,Inheritance and Polymorphism,Exceptions and Debugging,Collections and Generics,Linked Data Structures Stacks, Queues, and Lists Memory Management Recursion Trees,Sorting',
-    'CS 1032': '''Techniques used for determining technological needs of businesses; building and managing systems to
-meet those needs; development roles of individuals and organizations; planning and management of
-concepts, personnel and processes; related software tools (spreadsheets, databases).
-This course satisfies the Information Technology requirement for a Certified Accountant, a Certified
-General Accountant or a Certified Management Accountant accreditation. The content of the course
-has been approved by The Institute of Chartered Accountants of Ontario, The Certified General
-Accountants of Ontario and The Society of Management Accountants of Ontario. The materials used in
-this course for the introduction to Microsoft applications software have been approved by Microsoft for
-use in the preparation for the Microsoft Office Specialist Certification exams.''',
-"CS 1033": '''This course is an introduction to multimedia concepts and explores the use of different types of media
-components (text, images, sound, animation and video) to convey ideas and facilitate interaction delivered
-through a web site. Topics include design considerations and media creation/editing tools for creating
-websites, graphics, sound, animation and video files. This course has a theoretical component and a practical
-component. Media components will be studied at a theoretical level, and students will have the opportunity to
-practice their skills by using software to create graphics, animation, movies, and web sites.  There are no
-prerequisites for this course however the student must have their own computer and be familiar with the
-basic skills of computer use and file management. Student will have to purchase some software (under 50
-dollars) in order to complete labs and assignments.
-Learning Outcomes:
-Upon completion of this course, a student will be able to:
-Recognize the characteristics of good design.
-Identify the ways that our world is translated into data that can be stored on a computer.
-List and describe at least 3 compression strategies used by computer scientists.
-Describe how the world wide web and the internet and search engines work.
-List some of the critical people and dates in the history of multimedia.
-Recognize the characteristics that affect the quality and realism of  animation and videos.
-Using software, create and assemble the pieces (images, text, sound, animation and video) to build a
-website.
-LECTURE TOPICS
-1. Intro to Multimedia
-2. Text:
-Text attributes and design considerations
-3. Graphics:
-Types of graphics, attributes, considerations
-Optimization techniques
-File formats
-Graphics software
-4. Web Development:
-Design considerations
-Understanding what's involved in getting your web site up and running
-Web building software 
-5. Animation:
-Types of animation, file formats
-Sources of animation
-Creating animation for the web
-Animation software
-6. Sound:
-Sources of sound, file formats
-Sound-Editing software
-Sound on the web (Audacity)
-7. Video in Multimedia
-Equipment overview
-Digital video considerations
-Video for the web
-''',
+    'CS 1026': ('Computer Science Fundamentals I', CS1026_DESC, [], ['CS 1025', 'CS 2120', 'DS 1200', 'ES 1036', 'DH 2220']),
+    'CS 1027': ('Computer Science Fundamentals II',CS1027_DESC, ['CS 1025', 'CS 1026', 'ES 1036'], ['CS 1037', 'CS 2121', 'DH 2221']),
+    'CS 1032': ('Information Systems and Design',CS1032_DESC, [], ['MOS 1033']),
+    "CS 1033": ('Multimedia and Communication',CS1033_DESC, [], []),
+    'CS 2033': ('Multimedia and Communication II', CS2033_DESC, ['CS 1033'], []),
+    'CS 2034': ('Data Analytics: Principles and Tools', CS2034_DESC, [], []),
+    'CS 2035': ('Data Analysis and Visualization', CS2035_DESC, [],[]),
+    'CS 2120': ('Coding Essentials', CS2120_DESC, [], ['CS 1025', 'CS 1026', 'ES 1036', 'DH 2220']),
+    'CS 2208': ('Introduction to Computer Organization and Architecture', CS2208_DESC, ['CS 1027', 'CS 1037'], []),
+    'CS 2209': ('Applied Logic for Computer Science', CS2209_DESC, ['CS 1027', 'CS 1037', 'DH 2221', 'CS 2120'],[]),
+    'CS 2210': ('Data Structures and Algorithms', CS2210_DESC, ['CS 1027', 'CS 1037', 'CS 2120', 'DH 2221'],[]),
+    'CS 2211': ('Software Tools and Systems Programming', CS2211_DESC, ['CS 1027', 'CS 1037', 'CS 2101'],['SE 2250']),
+    'CS 2212': ('Introduction to Software Engineering', CS2212_DESC, ['CS 2210', 'CS 2211'], ['SE 2203']),
+    'CS 2214': ('Discrete Structures for Computing', CS2214_DESC, ['CS 1027', 'CS 1037', 'CS 2101'], ['MATH 2151', 'MATH 2155']),
+    'CS 3319': ('Databases I', CS3319_DESC, ['CS 2210', 'CS 2211', 'CS 2120', 'DH 2221'], ['SE 3352']),
+    'CS 3305': ('Operating Systems',CS3305_DESC, ['CS 2208', 'CS 2211'],[]),
+    'CS 3307': ('Objected-Oriented Design and Analysis',CS3307_DESC, ['CS 2212'], ['SE 3350'] ),
+    'CS 3331': ('Foundations of Computer Science', CS3331_DESC, ['CS 2214'], []),
+    'CS 3340': ('Analysis of Algorithms',CS3340_DESC, ['CS 2210', 'CS 2214', 'CS 2211'], [] ),
+    'CS 3342': ('Organization of Programming Languages', CS3342_DESC, ['CS 2211', 'SE 3313'], []),
+    'CS 3346': ('Introduction to Artificial Intelligence', CS3346_DESC, ['CS 2210', 'CS 2211', 'CS 2120', 'CS 2209'],[]),
+    'CS 3350': ('Computer Organization',CS3350_DESC, ['CS 2208', 'CS 2209', 'CS 2210', 'CS 2211'], ['ECE 3375'] ),
+    'CS 3357': ('Computer Networks I', CS3357_DESC, ['CS 2210', 'CS 2211'], ['ECE 4436']),
+    'CS 3377': ('Software Project Management',CS3377_DESC, ['CS 2212'], ['SE 3351'] ),
+    'CS 3388': ('Computer Graphics I', CS3388_DESC, ['CS 2211'], []),
+    'CS 4411': ('Databases II', CS4411_DESC, ['CS 3319'], []),
+    'CS 4414': ('Introduction to Data Science I',CS4414_DESC, ['CS 2210'], ['SS3650','SE4460A', 'SS3850B']),
+    'CS 4417': ('Unstructured Data',CS4417_DESC, ['CS 3319'], [] ),
+    'CS 4438': ('Internet Algorithmics', CS4438_DESC, ['CS 2210'] ,[]),
+    'CS 4442': ('Artificial Intelligence II', CS4442_DESC, [], []),
+    'CS 4457': ('Computer Networks II', CS4457_DESC, ['CS 3305', 'CS 3357'],[]),
+    'CS 4463': ('Computational Biology', CS4463_DESC, ['CS 3331', 'CS 3340'] ,[]),
+    'CS 4470': ('Software Maintenance and Configuration Management', CS4470_DESC, ['CS 3307', 'CS 3305', 'CS 3331', 'CS 3340', 'CS 3342', 'CS 3350'], []),
+    'CS 4471': (),
+    'CS 4474': (),
+    'CS 4475': (),
+    'CS 4478': (),
+    'CS 4480': (),
+    'CS 4482': (),
+    'CS 4483': (),
+    
 
 }
