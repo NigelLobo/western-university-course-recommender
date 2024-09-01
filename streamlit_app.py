@@ -8,7 +8,7 @@ st.title("Western Course Recommender")
 #     "This app uses RAG to tune LLM responses to consider western course syllabi"
 # )
 
-selected = pills("Eg.", ["Machine Learning Engineer", "Database Adminstrator", "Distributed Systems Engineer", "Game Developer", "Network Engineer"], ["🤖", "💾", "💽", "🎮", "🌐"],clearable=True,index=None)
+selected = pills("Eg.", ["Machine Learning Engineer", "Database Adminstrator", "Distributed Systems Engineer", "Game Developer", "Network Engineer", "Data Analyst"], ["🤖", "💾", "💽", "🎮", "🌐","📊"],clearable=True,index=None)
 
 job = st.text_input('My dream job is:', selected)
 
