@@ -830,3 +830,100 @@ Software maintenance requires at least three kinds of knowledge:
  
 
 Students are anticipated to acquire all these three types of knowledge as appropriate for their projects.'''
+
+CS4471_DESC = '''Software Design and Architecture: Course Description
+The objective in this course is to share knowledge and technology on “software
+architectures”.
+A software architecture is an abstract representation of a software system,
+filtering out what is traditionally considered detailed design- and implementationlevel issues (such as: algorithm, design patterns, data representation and coding)
+and highlighting such aspects as the overall system structure, inter-relationships
+and interaction among these the elements in the system structure, and other
+“run-time” or “off-line” properties of the system (such as reliability, performance,
+portability, inter-operability, etc.).
+Whereas the requirements of a system generally state the functionality and the
+expected behaviour of the deployed system, the architecture of the system
+describes how the desired functions and qualities are to be (or have been)
+implemented. An architecture sets bounds for lower-level design of the system
+and gives a technical context to future enhancements of the system.
+For a large and complex (software-intensive) system, its architecture is an
+essential means for controlling and evolving the system. Among many other uses
+of the architecture include: development team organisation, overall system test
+planning, training of new developers, release planning, defect analysis, system
+component reuse, size/cost/effort estimation, and vision sharing with various
+stakeholders.
+Among the resources required to create a high quality system architecture
+include: requirements of the system; organisational context; domain and
+technical knowledge and experience; existing system and its architecture (if any);
+appropriate stakeholders; and architecting notations, methods, techniques, tools
+and processes.
+Just as there are patterns for the design of a system, there are patterns for the
+architecture of the system. This helps in the selection of the entire, or parts of an,
+architecture from a set of choices; increasing reuse, cost reduction, and quality
+development.
+Work Components
+In this course, the key work components include:
+,Weekly assigned readings and creating summaries.
+,Creating a technical domain model from knowledge gained in the
+course.
+,Specialist topic: literature readings and in-class presentation.
+,In-class group summary creation, and Q&A and discussions.
+,Team project.
+Briefly, the project is about creating microservices, suitably architected, on
+a Cloud platform (assuming availability of a suitable and cost-free
+platform). Projects are carried out in teams that will give progress reports
+on their project, demo, and supporting presentation.'''
+
+CS4474_DESC = '''Human-Computer Interaction: This course provides an overview of a number of areas in human-computer interaction (HCI). Broadly speaking, HCI is an
+interdisciplinary area concerned with the design, evaluation, and implementation of interactive systems for human use and
+with the study of major phenomena surrounding them. HCI addresses any interaction with computers by humans, as
+developers or as users, as individuals or as groups. On completion of the course, students are expected to have theoretical
+knowledge of and practical experience in the fundamental aspects of designing, implementing, and evaluating interactive
+systems that are useful and usable. Design of usable technology draws extensively on knowledge of informatics, cognition,
+communication, and computation. It is expected that students will become familiar with some of the literature in HCI and
+develop sufficient background in HCI issues to do more advanced work in this area.
+This course consists of 3 lecture hours per week, reading assignments and presentations, in-class discussions, a team-based
+project, and some tests and quizzes. In consultation with the instructor, graduate students may opt out of the tests and
+write a major research paper.'''
+
+CS4478_DESC = '''Master the Mainframe: The mainframe remains a critical piece of infrastructure for enterprise computing, with experts highly sought after by industry. Through this course, students will be exposed to real­world development and usage scenarios through hands­on projects, gaining
+valuable experience and skills for working with modern mainframe systems. IBM provides access to mainframe hardware and
+software through their annual “Master the Mainframe” program. As an added bonus, this program is organized as a competition too, so there are prizes based on your performance at the same time. Further details from IBM can be found here:
+http://www.ibm.com/systems/z/masterthemainframe.'''
+
+CS4475_DESC = '''This course allows students to take part in an open source project mentored in industry. This will
+give practical hands-on experience in working in software development, as well as valuable soft
+skills and team experience.'''
+
+CS4480_DESC = '''Open Source Software Project
+Undergraduate Capstone Open Source Projects
+(UCOSP): Game Development Project: Developing games of commercial scale and quality is an incredibly challenging task, whether the game is
+intended for entertainment or serious applications. The purpose of this course is to provide practical experience
+in the various aspects of the development of a large scale game project. Through a group project, this course will
+examine the concepts, theories, tools, technologies, and techniques for code and content generation for modern
+games.'''
+
+CS4482_DESC = '''Game Programming: Overview
+This course will provide a high-level look at the design, implementation, and usage of video
+game engines. The primary goal of this course is to offer a basic understanding of (i) the requirements of programming for video games and (i i) the systems required to create a usable
+and reusable foundation for game development. Extra time will be spent examining and working in existing game engines in order to demonstrate good (or bad) design.
+Some focus will be given to the graphical nature of game engines and will therefore include an
+introduction to computer graphics, (similar to and expanding on CS3388), shaders, animation
+techniques, and optimization algorithms. Depth will be given in selected areas, but the student
+will be expected to do a reasonable amount of independent reading and learning outside of the
+lecture hours.
+Calendar Description
+Core concepts and techniques of game programming, including the development and usage of
+game engines for the creation of games. Topics from: game engine architecture; real-time 2D
+and 3D rendering; character animation; shaders; real-time physics simulation, artificial intelligence, and networking; procedural methods; player input and controls; platform considerations; tools development.
+'''
+
+CS4483_DESC = '''Game Design: The video game industry is a very significant and important software industry, both for entertainment and serious
+applications. Building a high quality game is a surprisingly difficult and challenging process; exploitation of the
+latest technologies does not necessarily lead to success. In the end, much of a game's success (or failure) is
+dictated by its design. In other words, does the game offer engaging, immersive, and rewarding gameplay to the
+player, resulting in an overall satisfactory experience?
+This course provides an in-depth examination of video game design and best practices to study the issues and
+challenges that arise when developing games for both entertainment and serious applications. Topics include: the
+history of video games; game development teams, processes, and management; principles of game design,
+game play, and balance; game genres and genre-specific design issues; plot, story, and level design; challenge
+design; ethical issues in video games and the gaming industry; and the future of gaming.'''

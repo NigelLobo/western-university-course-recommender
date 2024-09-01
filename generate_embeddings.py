@@ -2,7 +2,6 @@
 import requests
 import os
 from dotenv import load_dotenv
-from syllabi import syllabi
 
 load_dotenv()
 
