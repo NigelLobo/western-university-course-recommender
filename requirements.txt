@@ -5,3 +5,4 @@ sentence_transformers
 datasets
 torch
 streamlit_pills
+retry

@@ -7,11 +7,9 @@ from syllabi import syllabi
 faqs_embeddings = load_dataset('nigellobo/syllabi_embeddings')
 dataset_embeddings = torch.from_numpy(faqs_embeddings["train"].to_pandas().to_numpy()).to(torch.float)
 
-
-
 def getMostRelevantCourses(text):
     output = query(text)
-
+    print('[getMostRelevantCourses] ')
     query_embeddings = torch.FloatTensor(output)
     hits = semantic_search(query_embeddings, dataset_embeddings, top_k=3)
     courses = ''
