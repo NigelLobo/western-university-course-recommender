@@ -1,1 +1,7 @@
 streamlit
+pandas
+python-dotenv
+sentence_transformers
+datasets
+torch
+streamlit_pills
