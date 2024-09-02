@@ -19,11 +19,12 @@ job = st.text_input('My dream job is:', selected)
 submitted = st.button("Submit")
 
 st.write('\n')
+st.write('\n')
 
 expander = st.expander("See all courses")
 
 df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
-df.columns = ['Course Code', 'Course Name', 'Syllabus', 'Pre-requistes', 'Anti-requisites']
+df.columns = ['Course Code', 'Course Name', 'Syllabus', 'Prerequisites', 'Antirequisites']
 def process_string(s):
     if isinstance(s, str):
         # Cut out content before the first ':' and take a 50-character preview
@@ -35,11 +36,12 @@ df['Syllabus'] = df['Syllabus'].apply(process_string)
 
 expander.dataframe(df)
 
-st.divider()
 
 string_list = [(key + " - " + value[0]) for key, value in syllabi.items() if value]
 
 if submitted and job:
+    st.divider()
+
     st.subheader('Most Relevant Courses For You')
     st.write('Scanned course syllabi using Semantic Search:')
     relevantCourses = ''
