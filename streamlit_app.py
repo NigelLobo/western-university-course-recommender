@@ -17,17 +17,30 @@ selected = pills("Eg.", ["Machine Learning Engineer", "Database Adminstrator", "
 job = st.text_input('My dream job is:', selected)
 
 submitted = st.button("Submit")
+
+st.subheader('All Courses')
+
+df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
+df.columns = ['Course Code', 'Course Name', 'Syllabus', 'Pre-requistes', 'Anti-requisites']
+def process_string(s):
+    if isinstance(s, str):
+        # Cut out content before the first ':' and take a 50-character preview
+        return s.split(':', 1)[-1][:50] + '...'
+    return s
+
+# Apply the function to the second column
+df['Syllabus'] = df['Syllabus'].apply(process_string)
+
+st.dataframe(df)
+
 st.divider()
 
 string_list = [(key + " - " + value[0]) for key, value in syllabi.items() if value]
 
 if submitted and job:
-    df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
-
-    df.columns = ['Course Code', 'Course Name', 'Description', 'Pre-requistes', 'Anti-requisites']
-    st.dataframe(df)
     
-    st.header('Most Relevant Courses ')
+    
+    st.subheader('Most Relevant Courses For You')
     st.write('Similar Western courses using Semantic Search:')
     relevantCourses = ''
     # with st.spinner('loading...'):
