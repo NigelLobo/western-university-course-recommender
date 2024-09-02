@@ -35,17 +35,23 @@ if submitted and job:
     with col1:
         st.header("With RAG")
         rag_output = ''
-        with st.spinner('generating...'):
-            rag_output = ask_gemma2b(f'''Here are a list of computer science courses at Western University: {string_list}. 
-                            Create a 4 year university schedule using only courses from that list. Split each year into 2 semesters.
-                            Seperate the schedule by year. You must only have up to 10 courses per year. 
-                            Pick courses for becoming a {job}. You must include these relevant courses: {relevantCourses}''')
-            
+        try:
+            with st.spinner('generating...'):
+                
+                rag_output = ask_gemma2b(f'''Here are a list of computer science courses at Western University: {string_list}. 
+                                Create a 4 year university schedule using only courses from that list. Split each year into 2 semesters.
+                                Seperate the schedule by year. You must only have up to 10 courses per year. 
+                                Pick courses for becoming a {job}. You must include these relevant courses: {relevantCourses}''')
+        except Exception as err:
+            st.write(err)   
         st.write(rag_output)
 
     with col2:
         st.header("Without RAG")
         no_rag_output = ''
-        with st.spinner('generating...'):
-            no_rag_output = ask_gemma2b(f'generate a university course schedule to become a {job}')
+        try:
+            with st.spinner('generating...'):
+                no_rag_output = ask_gemma2b(f'generate a university course schedule to become a {job}')
+        except Exception as err:
+            st.write(err)  
         st.write(no_rag_output)
