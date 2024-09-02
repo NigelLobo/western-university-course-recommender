@@ -20,7 +20,8 @@ st.divider()
 string_list = [(key + " - " + value[0]) for key, value in syllabi.items() if value]
 
 if submitted and job:
-    st.header('Most Relevant Courses (Semantic Search)')
+    st.header('Most Relevant Courses ')
+    st.write('Similar Western courses using Semantic Search:')
     relevantCourses = ''
     # with st.spinner('loading...'):
     #     time.sleep(5)
