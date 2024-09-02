@@ -22,8 +22,11 @@ st.divider()
 string_list = [(key + " - " + value[0]) for key, value in syllabi.items() if value]
 
 if submitted and job:
-    colA, colB = st.columns(2)
-    with colA:
+        df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
+
+        df.columns = ['Course Code', 'Course Name', 'Description', 'Pre-requistes', 'Anti-requisites']
+        st.dataframe(df)
+        
         st.header('Most Relevant Courses ')
         st.write('Similar Western courses using Semantic Search:')
         relevantCourses = ''
@@ -35,11 +38,7 @@ if submitted and job:
         except Exception as err:
             print(err)
     
-    with colB:
-        df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
-
-        df.columns = ['Course Code', 'Course Name', 'Description', 'Pre-requistes', 'Anti-requisites']
-        st.dataframe(df)
+        
 
     st.divider()
     st.header("Degree Planning")
