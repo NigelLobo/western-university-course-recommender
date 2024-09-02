@@ -11,7 +11,7 @@ def getMostRelevantCourses(text):
     output = query(text)
     print('[getMostRelevantCourses] ')
     query_embeddings = torch.FloatTensor(output)
-    hits = semantic_search(query_embeddings, dataset_embeddings, top_k=3)
+    hits = semantic_search(query_embeddings, dataset_embeddings, top_k=5)
     courses = ''
     courseCodes = []
     for i in range(len(hits[0])):
