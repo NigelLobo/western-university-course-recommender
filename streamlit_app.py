@@ -25,8 +25,8 @@ if submitted and job:
     # with st.spinner('loading...'):
     #     time.sleep(5)
     try:
-        relevantCourses = getMostRelevantCourses(job)
-        st.write(relevantCourses)
+        relevantCoursesStr, courseCodes = getMostRelevantCourses(job)
+        st.write(relevantCoursesStr)
     except Exception as err:
         print(err)
 
@@ -35,25 +35,29 @@ if submitted and job:
 
     col1, col2 = st.columns(2)
     with col1:
-        st.header("With RAG")
+        st.subheader("With RAG")
         rag_output = ''
         try:
             with st.spinner('generating...'):
-                
-                rag_output = ask_gemma2b(f'''Here are a list of computer science courses at Western University: {string_list}. 
+                prompt = f'''Here are a list of computer science courses at Western University: {string_list}. 
                                 Create a 4 year university schedule using only courses from that list. Split each year into 2 semesters.
                                 Seperate the schedule by year. You must only have up to 10 courses per year. 
-                                Pick courses for becoming a {job}. You must include these relevant courses: {relevantCourses}''')
+                                Pick courses for becoming a {job}. You must include these relevant courses: {relevantCourses}'''
+                rag_output = ask_gemma2b(prompt)
+                
+                for course in courseCodes:
+                    rag_output = rag_output.replace(course, f':green[{course}]')
         except Exception as err:
             st.write(err)   
         st.write(rag_output)
 
     with col2:
-        st.header("Without RAG")
+        st.subheader("Without RAG")
         no_rag_output = ''
         try:
             with st.spinner('generating...'):
-                no_rag_output = ask_gemma2b(f'generate a university course schedule to become a {job}')
+                prompt = f'Forget any previous conversation. Start with a new context. Generate a university course schedule to become a {job}'
+                no_rag_output = ask_gemma2b(prompt)
         except Exception as err:
             st.write(err)  
         st.write(no_rag_output)

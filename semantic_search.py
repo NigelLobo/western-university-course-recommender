@@ -13,9 +13,11 @@ def getMostRelevantCourses(text):
     query_embeddings = torch.FloatTensor(output)
     hits = semantic_search(query_embeddings, dataset_embeddings, top_k=3)
     courses = ''
+    courseCodes = []
     for i in range(len(hits[0])):
         idx = [hits[0][i]['corpus_id']][0]
         course_code = list(syllabi.keys())[idx]
+        courseCodes.append(course_code)
         course_name = list(syllabi.values())[idx][0]
         courses += f'{1+i}. {course_code} - {course_name}\n'
-    return courses
+    return [courses, courseCodes]
