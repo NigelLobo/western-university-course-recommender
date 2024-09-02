@@ -40,7 +40,7 @@ syllabi = {
     'CS 4474': ('Human-Computer Interaction',CS4474_DESC,[],[]),
     'CS 4475': ('Open Source Software Project (UCOSP)',CS4475_DESC, [], []),
     'CS 4478': ('Master the Mainframe', CS4478_DESC,[],[]),
-    'CS 4480': ('Game Development Project',CS4480_DESC,['CS 4482, CS 4483'], []),
+    'CS 4480': ('Game Development Project',CS4480_DESC,['CS 4482', 'CS 4483'], []),
     'CS 4482': ('Game Programming', CS4482_DESC, ['CS 3340','CS 3305','CS 3307'], []),
     'CS 4483': ('Game Design', CS4483_DESC, ['CS 3307'], []),
     
