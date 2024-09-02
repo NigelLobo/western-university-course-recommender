@@ -6,3 +6,4 @@ datasets
 torch
 streamlit_pills
 retry
+gradio_client 
