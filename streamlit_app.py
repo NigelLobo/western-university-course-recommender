@@ -39,10 +39,10 @@ if submitted and job:
         rag_output = ''
         try:
             with st.spinner('asking Google Gemma-2-2b-it...'):
-                prompt = f'''Here are a list of computer science courses at Western University: {string_list}. 
+                prompt = f'''Here is a list of computer science courses at Western University: {string_list}. 
                                 Create a 4 year university schedule using only courses from that list. Split each year into 2 semesters.
                                 Seperate the schedule by year. You must only have up to 10 courses per year. 
-                                Pick courses for becoming a {job}. You must include these relevant courses: {relevantCourses}'''
+                                Pick courses for becoming a {job}. You must include these relevant course codes in the schedule: {", ".join(courseCodes)}'''
                 rag_output = ask_gemma2b(prompt)
                 
                 for course in courseCodes:
