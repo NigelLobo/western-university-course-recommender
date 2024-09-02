@@ -30,6 +30,8 @@ if submitted and job:
     except Exception as err:
         print(err)
 
+    st.divider()
+    st.header("Degree Planning")
 
     col1, col2 = st.columns(2)
     with col1:
