@@ -22,21 +22,21 @@ st.divider()
 string_list = [(key + " - " + value[0]) for key, value in syllabi.items() if value]
 
 if submitted and job:
-        df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
+    df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
 
-        df.columns = ['Course Code', 'Course Name', 'Description', 'Pre-requistes', 'Anti-requisites']
-        st.dataframe(df)
-        
-        st.header('Most Relevant Courses ')
-        st.write('Similar Western courses using Semantic Search:')
-        relevantCourses = ''
-        # with st.spinner('loading...'):
-        #     time.sleep(5)
-        try:
-            relevantCoursesStr, courseCodes = getMostRelevantCourses(job)
-            st.write(relevantCoursesStr)
-        except Exception as err:
-            print(err)
+    df.columns = ['Course Code', 'Course Name', 'Description', 'Pre-requistes', 'Anti-requisites']
+    st.dataframe(df)
+    
+    st.header('Most Relevant Courses ')
+    st.write('Similar Western courses using Semantic Search:')
+    relevantCourses = ''
+    # with st.spinner('loading...'):
+    #     time.sleep(5)
+    try:
+        relevantCoursesStr, courseCodes = getMostRelevantCourses(job)
+        st.write(relevantCoursesStr)
+    except Exception as err:
+        print(err)
     
         
 
