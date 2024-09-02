@@ -18,7 +18,9 @@ job = st.text_input('My dream job is:', selected)
 
 submitted = st.button("Submit")
 
-st.subheader('All Courses')
+st.write('\n')
+
+expander = st.expander("See all courses")
 
 df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
 df.columns = ['Course Code', 'Course Name', 'Syllabus', 'Pre-requistes', 'Anti-requisites']
@@ -31,17 +33,15 @@ def process_string(s):
 # Apply the function to the second column
 df['Syllabus'] = df['Syllabus'].apply(process_string)
 
-st.dataframe(df)
+expander.dataframe(df)
 
 st.divider()
 
 string_list = [(key + " - " + value[0]) for key, value in syllabi.items() if value]
 
 if submitted and job:
-    
-    
     st.subheader('Most Relevant Courses For You')
-    st.write('Similar Western courses using Semantic Search:')
+    st.write('Scanned course syllabi using Semantic Search:')
     relevantCourses = ''
     # with st.spinner('loading...'):
     #     time.sleep(5)
