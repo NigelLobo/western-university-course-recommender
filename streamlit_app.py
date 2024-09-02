@@ -38,7 +38,7 @@ if submitted and job:
         st.subheader("With RAG")
         rag_output = ''
         try:
-            with st.spinner('generating...'):
+            with st.spinner('asking Google Gemma-2-2b-it...'):
                 prompt = f'''Here are a list of computer science courses at Western University: {string_list}. 
                                 Create a 4 year university schedule using only courses from that list. Split each year into 2 semesters.
                                 Seperate the schedule by year. You must only have up to 10 courses per year. 
@@ -55,8 +55,8 @@ if submitted and job:
         st.subheader("Without RAG")
         no_rag_output = ''
         try:
-            with st.spinner('generating...'):
-                prompt = f'Forget any previous conversation. Start with a new context. Generate a university course schedule to become a {job}'
+            with st.spinner('asking Google Gemma-2-2b-it...'):
+                prompt = f'Forget any previous conversation. Start with a new context. Do not use course codes: {string_list}. Generate a university course schedule to become a {job}'
                 no_rag_output = ask_gemma2b(prompt)
         except Exception as err:
             st.write(err)  
