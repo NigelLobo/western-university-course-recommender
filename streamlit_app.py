@@ -4,6 +4,8 @@ from streamlit_pills import pills
 from prompt_llm import ask_gemma2b
 from syllabi import syllabi
 import time
+import pandas as pd
+import numpy as np
 
 st.title("Western U - Course Recommender")
 # st.write(
@@ -20,16 +22,23 @@ st.divider()
 string_list = [(key + " - " + value[0]) for key, value in syllabi.items() if value]
 
 if submitted and job:
-    st.header('Most Relevant Courses ')
-    st.write('Similar Western courses using Semantic Search:')
-    relevantCourses = ''
-    # with st.spinner('loading...'):
-    #     time.sleep(5)
-    try:
-        relevantCoursesStr, courseCodes = getMostRelevantCourses(job)
-        st.write(relevantCoursesStr)
-    except Exception as err:
-        print(err)
+    colA, colB = st.columns(2)
+    with colA:
+        st.header('Most Relevant Courses ')
+        st.write('Similar Western courses using Semantic Search:')
+        relevantCourses = ''
+        # with st.spinner('loading...'):
+        #     time.sleep(5)
+        try:
+            relevantCoursesStr, courseCodes = getMostRelevantCourses(job)
+            st.write(relevantCoursesStr)
+        except Exception as err:
+            print(err)
+    
+    with colB:
+        cols = ['Course Code', 'Course Name', 'Description', 'Pre-requistes', 'Anti-requisites']
+        df = pd.DataFrame.from_dict(syllabi, orient='index', columns=cols)
+        st.dataframe(df)
 
     st.divider()
     st.header("Degree Planning")
