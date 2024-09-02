@@ -37,7 +37,7 @@ if submitted and job:
         rag_output = ''
         with st.spinner('generating...'):
             rag_output = ask_gemma2b(f'''Here are a list of computer science courses at Western University: {string_list}. 
-                            Create a 4 year university schedule using only courses from that list.
+                            Create a 4 year university schedule using only courses from that list. Split each year into 2 semesters.
                             Seperate the schedule by year. You must only have up to 10 courses per year. 
                             Pick courses for becoming a {job}. You must include these relevant courses: {relevantCourses}''')
             
