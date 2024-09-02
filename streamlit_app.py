@@ -5,7 +5,7 @@ from prompt_llm import ask_gemma2b
 from syllabi import syllabi
 import time
 
-st.title("Western Course Recommender")
+st.title("Western U - Course Recommender")
 # st.write(
 #     "This app uses RAG to tune LLM responses to consider western course syllabi"
 # )
