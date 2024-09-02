@@ -36,8 +36,9 @@ if submitted and job:
             print(err)
     
     with colB:
-        cols = ['Course Code', 'Course Name', 'Description', 'Pre-requistes', 'Anti-requisites']
-        df = pd.DataFrame.from_dict(syllabi, orient='index', columns=cols)
+        df = pd.DataFrame.from_dict(syllabi, orient='index').reset_index()
+
+        df.columns = ['Course Code', 'Course Name', 'Description', 'Pre-requistes', 'Anti-requisites']
         st.dataframe(df)
 
     st.divider()
